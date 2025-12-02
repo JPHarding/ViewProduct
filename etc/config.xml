@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JP_ViewProduct>
+            <version>0.1.0</version>
+        </JP_ViewProduct>
+    </modules>
+    <global>
+        <blocks>
+            <jp_viewproduct>
+                <class>JP_ViewProduct_Block</class>
+            </jp_viewproduct>
+        </blocks>
+        <models>
+            <jp_viewproduct>
+                <class>JP_ViewProduct_Model</class>
+            </jp_viewproduct>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <jp_viewproduct>
+                        <type>model</type>
+                        <class>jp_viewproduct/observer</class>
+                        <method>addViewProductButton</method>
+                    </jp_viewproduct>
+                </observers>
+            </adminhtml_block_html_before>
+        </events>
+    </adminhtml>
+</config>
